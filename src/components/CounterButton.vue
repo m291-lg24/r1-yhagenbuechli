@@ -1,5 +1,8 @@
 <script setup>
 import { ref } from 'vue'
+import { useUserStore } from '@/stores/userStore'
+
+const userStore = useUserStore()
 
 const count = ref(0)
 const name = ref('')
@@ -27,6 +30,10 @@ function submitName() {
 
   errorMessage.value = ''
   greeting.value = `Hallo ${name.value}!`
+
+  userStore.addName(name.value)
+
+  name.value = ''
 }
 </script>
 
@@ -106,6 +113,32 @@ function submitName() {
       >
         {{ greeting }}
       </p>
+
+      <div
+        v-if="userStore.names.length > 0"
+        class="mt-6"
+      >
+        <h3 class="mb-2 font-bold">
+          Gespeicherte Namen
+        </h3>
+
+        <ul class="space-y-2">
+          <li
+            v-for="(savedName, index) in userStore.names"
+            :key="index"
+            class="flex items-center justify-between rounded-lg bg-gray-100 p-3"
+          >
+            <span>{{ savedName }}</span>
+
+            <button
+              class="rounded-lg bg-red-100 px-3 py-1 text-red-700"
+              @click="userStore.removeName(index)"
+            >
+              Löschen
+            </button>
+          </li>
+        </ul>
+      </div>
     </div>
   </section>
 </template>
