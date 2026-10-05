@@ -1,5 +1,10 @@
 @import 'tailwindcss';
 
+main {
+    max-width: 800px;
+    margin: 0 auto;
+    border: 1px solid #ccc;
+}
 /* Eigene Farben, Schriften usw.: https://tailwindcss.com/docs/theme */
 @theme {
 }
