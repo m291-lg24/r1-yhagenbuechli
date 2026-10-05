@@ -1,10 +1,79 @@
 @import 'tailwindcss';
 
-main {
-    max-width: 800px;
-    margin: 0 auto;
-    border: 1px solid #ccc;
+body {
+  margin: 0;
+  min-height: 100vh;
+  font-family: Arial, Helvetica, sans-serif;
+  background:
+    radial-gradient(circle at top left, #ffe4f0 0, transparent 35%),
+    radial-gradient(circle at bottom right, #e9ddff 0, transparent 35%),
+    #fff7fb;
+  color: #3d3040;
 }
-/* Eigene Farben, Schriften usw.: https://tailwindcss.com/docs/theme */
-@theme {
+
+main {
+  min-height: 100vh;
+}
+
+h1 {
+  color: #c94f87;
+  letter-spacing: -2px;
+}
+
+h2 {
+  color: #744b7a;
+}
+
+section {
+  border: 2px solid #f4d7e6;
+  box-shadow:
+    0 15px 40px rgba(174, 111, 148, 0.15),
+    0 3px 8px rgba(174, 111, 148, 0.08);
+}
+
+button {
+  cursor: pointer;
+  transition:
+    transform 0.15s ease,
+    box-shadow 0.15s ease,
+    background-color 0.15s ease;
+}
+
+button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 15px rgba(166, 100, 145, 0.18);
+}
+
+button:active {
+  transform: translateY(0);
+}
+
+button:first-of-type {
+  background: #df78a7;
+}
+
+button:first-of-type:hover {
+  background: #cd6495;
+}
+
+input {
+  background-color: #fffafd;
+  border-color: #e7bfd3;
+  outline: none;
+  transition:
+    border-color 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+input:focus {
+  border-color: #df78a7;
+  box-shadow: 0 0 0 4px rgba(223, 120, 167, 0.15);
+}
+
+label {
+  color: #67415f;
+}
+
+::placeholder {
+  color: #bca4b2;
 }

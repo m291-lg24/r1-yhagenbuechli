@@ -14,7 +14,6 @@ function decreaseCount() {
   count.value--
 }
 
-
 function resetCount() {
   count.value = 0
 }
